@@ -1,19 +1,26 @@
-module.exports = {
-  testEnvironment: 'jsdom',
+const nextJest = require('next/jest')
+
+const createJestConfig = nextJest({
+  dir: './',
+})
+
+const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testEnvironment: 'jest-environment-jsdom',
+  
   moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/__mocks__/fileMock.js',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
+
+  transformIgnorePatterns: [
+    '/node_modules/(?!(firebase|@firebase|rxjs)/)',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+
+  extensionsToTreatAsEsm: ['.ts', '.tsx'], // 👈 necessário para suporte ESM
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': [
-      'babel-jest',
-      {
-        presets: [
-          ['@babel/preset-env', { targets: { node: 'current' } }],
-          ['@babel/preset-react', { runtime: 'automatic' }],
-        ],
-      },
-    ],
+    '^.+\\.(ts|tsx)$': ['ts-jest', { useESM: true }],
   },
 }
+
+module.exports = createJestConfig(customJestConfig)
