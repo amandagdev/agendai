@@ -6,7 +6,7 @@ O **Agendai** é um sistema simples e automatizado de agendamentos online. Ideal
 
 ## Acesso rápido
 
-🔗 [https://agendai.vercel.app](https://agendai.vercel.app)
+🔗 [https://agendai-app.vercel.app](https://agendai-app.vercel.app)
 
 
 ## Funcionalidades
