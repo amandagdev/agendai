@@ -5,7 +5,6 @@ import { Button, Form, Input } from '@heroui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { inputClassNames } from '../../input.styles'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -16,7 +15,10 @@ export default function Login() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await loginWithEmail(email, password)
+      const cleanEmail = email.trim().toLowerCase()
+      const cleanPassword = password.trim()
+
+      await loginWithEmail(cleanEmail, cleanPassword)
       router.push('/dashboard')
     } catch (err) {
       setError('Email ou senha inválidos.')
@@ -41,7 +43,6 @@ export default function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            classNames={inputClassNames}
             errorMessage={({ validationDetails }) => {
               if (validationDetails.valueMissing) {
                 return 'Porfavor insira seu e-mail'
@@ -55,7 +56,6 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            classNames={inputClassNames}
             errorMessage={({ validationDetails }) => {
               if (validationDetails.valueMissing) {
                 return 'Porfavor insira sua senha'
@@ -75,7 +75,7 @@ export default function Login() {
             Entrar
           </Button>
 
-          <div className="text-center text-sm text-gray-500 mt-4">
+          <div className="w-full text-center text-sm text-gray-500 mt-4">
             Ainda não possui conta?{' '}
             <Link href="/register" className="text-orange-500 font-medium hover:underline">
               Cadastre-se

@@ -1,12 +1,29 @@
 'use client'
 
-import { useUser } from '@/features/auth/hooks/useUser'
+import { AuthGuard } from '@/common/components/auth-guard/auth-guard'
+import { useUser } from '@/context/UserContext'
+import { Spinner } from '@heroui/react'
 
 export default function DashboardPage() {
   const { user, loading } = useUser()
 
-  if (loading) return null
-  if (!user) return <p>Não autorizado</p>
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Spinner />
+      </div>
+    )
+  }
 
-  return <div className="p-6 text-xl font-semibold">Olá, {user.name}</div>
+  if (!user) {
+    return <p className="text-center text-red-500 mt-10">Não autorizado</p>
+  }
+
+  return (
+    <AuthGuard>
+      <div className="flex bg-white justify-center items-center h-screen">
+        <p className="text-xl font-semibold text-orange-400">Olá, {user.name}</p>
+      </div>
+    </AuthGuard>
+  )
 }

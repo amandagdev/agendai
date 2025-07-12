@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useRegister } from '../../hooks/useRegister'
-import { inputClassNames } from '../../input.styles'
 
 export default function Register() {
   const [name, setName] = useState('')
@@ -42,10 +41,10 @@ export default function Register() {
   }
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 px-4">
+    <div className="w-full flex items-center justify-center bg-gray-50 px-4">
       <div className="w-full max-w-lg space-y-6">
         <div className="text-center">
-          <h1 className="text-6xl font-extrabold text-gray-800">
+          <h1 className="text-5xl font-extrabold text-gray-800">
             <span className="text-orange-500">agenda</span>í
           </h1>
           <p className="text-gray-600 mt-4 text-2xl">Crie a sua conta gratuita</p>
@@ -62,7 +61,6 @@ export default function Register() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            classNames={inputClassNames}
           />
           <Input
             id="email"
@@ -71,7 +69,6 @@ export default function Register() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            classNames={inputClassNames}
           />
 
           <Input
@@ -79,7 +76,6 @@ export default function Register() {
             label="Celular"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            classNames={inputClassNames}
           />
 
           <Input
@@ -89,7 +85,6 @@ export default function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            classNames={inputClassNames}
           />
           <Input
             id="confirm-password"
@@ -98,7 +93,6 @@ export default function Register() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            classNames={inputClassNames}
           />
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -107,7 +101,7 @@ export default function Register() {
             {loading ? 'Criando conta...' : 'Criar conta'}
           </Button>
 
-          <div className="text-sm text-gray-500 mt-4">
+          <div className="w-full text-center text-sm text-gray-500 mt-4">
             Já tem conta?{' '}
             <Link href="/login" className="text-orange-500 font-medium hover:underline">
               Entrar
