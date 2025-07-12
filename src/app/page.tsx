@@ -1,11 +1,17 @@
 'use client'
 
-import { Button } from '@heroui/react'
+import LandingFaq from '@/features/landing/components/landing-faq/landing-faq'
+import LandingHowItWorks from '@/features/landing/components/landing-how-It-works/landing-how-it-works'
+import LandingIntro from '@/features/landing/components/landing-intro/landing-intro'
+import LandingPricing from '@/features/landing/components/landing-pricing/landing-pricing'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Button>Agendai</Button>
-    </div>
+    <>
+      <LandingIntro />
+      <LandingHowItWorks />
+      <LandingPricing />
+      <LandingFaq />
+    </>
   )
 }
