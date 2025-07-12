@@ -1,8 +1,12 @@
 # 🗓️ Agendai
 
-O **Agendai** é uma aplicação web moderna e intuitiva para automatizar agendamentos online. Ideal para pequenos negócios, profissionais independentes que desejam facilitar o processo de marcação com os seus clientes.
+O **Agendai** é um sistema simples e automatizado de agendamentos online. Ideal para pequenos negócios, profissionais independentes que desejam facilitar o processo de marcação com os seus clientes.
 
 <img width="2976" height="1306" alt="Captura de Tela 2025-07-12 às 02 49 19" src="https://github.com/user-attachments/assets/23524440-fa09-4b1e-8070-a012098b564e" />
+
+## Acesso rápido
+
+🔗 [https://agendai.vercel.app](https://agendai.vercel.app)
 
 
 ## Funcionalidades
