@@ -13,7 +13,7 @@ const features = [
 
 export default function LandingPricing() {
   return (
-    <section className="py-20 bg-white" id="preco"s>
+    <section className="py-20 bg-white" id="preco">
       <div className="container mx-auto px-6 lg:px-12 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mt-4 mb-4">
           Um único plano, todos os recursos
