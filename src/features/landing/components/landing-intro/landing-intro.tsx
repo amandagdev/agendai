@@ -1,9 +1,22 @@
 'use client'
+import { useUser } from '@/context/UserContext'
 import { Button } from '@heroui/react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function LandingIntro() {
+  const router = useRouter()
+  const { user, loading } = useUser()
+  const handleClick = () => {
+    if (!loading) {
+      if (user) {
+        router.push('/profile')
+      } else {
+        router.push('/register')
+      }
+    }
+  }
+
   return (
     <section className="bg-gray-100 py-20">
       <div className="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
@@ -15,8 +28,11 @@ export default function LandingIntro() {
             Agendamentos automáticos, lembretes e controle em um só lugar. Simples, rápido e sem
             complicações.
           </p>
-          <Button className="text-white bg-orange-400 hover:bg-orange-500 text-lg px-6 py-3 rounded-xl">
-            <Link href="/register">COMEÇAR AGORA</Link>
+          <Button
+            onClick={handleClick}
+            className="text-white bg-orange-400 hover:bg-orange-500 text-lg px-6 py-3 rounded-xl"
+          >
+            COMEÇAR AGORA
           </Button>
         </div>
         <div className="flex justify-center lg:justify-end">

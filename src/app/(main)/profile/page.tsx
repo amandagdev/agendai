@@ -26,7 +26,7 @@ export default function ProfilePage() {
                   <p className="text-gray-600">
                     Teste Gratuito até {user?.trialEndsAt?.toLocaleDateString('pt-BR')}
                   </p>
-                  <Button className="bg-orange-500 text-white hover:bg-orange-600 w-full">
+                  <Button isDisabled className="bg-orange-500 text-white hover:bg-orange-600 w-full">
                     Assinar um plano
                   </Button>
                 </CardBody>
