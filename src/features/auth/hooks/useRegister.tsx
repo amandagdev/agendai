@@ -1,7 +1,9 @@
 import { auth } from '@/lib/firebase'
 import { db } from '@/lib/firestore'
+import { FirebaseError } from 'firebase/app'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
+
 import { useState } from 'react'
 
 type RegisterResult = {
@@ -24,8 +26,6 @@ export function useRegister() {
 
       console.log({ email, password, name, phone })
 
-      console.log(res.user.uid)
-
       await setDoc(doc(db, 'users', res.user.uid), {
         name,
         phone: phone || '',
@@ -34,19 +34,23 @@ export function useRegister() {
       })
 
       return { success: true, error: null }
-    } catch (err: any) {
+    } catch (err: unknown) {
       let errorMessage = 'Erro ao criar conta.'
-      switch (err.code) {
-        case 'auth/email-already-in-use':
-          errorMessage = 'Este e-mail já está em uso.'
-          break
-        case 'auth/invalid-email':
-          errorMessage = 'E-mail inválido.'
-          break
-        case 'auth/weak-password':
-          errorMessage = 'A senha é muito fraca.'
-          break
+
+      if (err instanceof FirebaseError) {
+        switch (err.code) {
+          case 'auth/email-already-in-use':
+            errorMessage = 'Este e-mail já está em uso.'
+            break
+          case 'auth/invalid-email':
+            errorMessage = 'E-mail inválido.'
+            break
+          case 'auth/weak-password':
+            errorMessage = 'A senha é muito fraca.'
+            break
+        }
       }
+
       return { success: false, error: errorMessage }
     } finally {
       setLoading(false)
