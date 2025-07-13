@@ -20,7 +20,8 @@ export default function Login() {
 
       await loginWithEmail(cleanEmail, cleanPassword)
       router.push('/dashboard')
-    } catch (err) {
+    } catch (err: unknown) {
+      console.log(err)
       setError('Email ou senha inválidos.')
     }
   }
