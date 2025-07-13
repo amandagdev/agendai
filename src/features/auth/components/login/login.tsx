@@ -31,7 +31,9 @@ export default function Login() {
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-gray-800">
-            <span className="text-orange-500">agenda</span>í
+            <Link href="/">
+              <span className="text-orange-500">agenda</span>í
+            </Link>
           </h1>
           <p className="text-gray-600 mt-2 text-lg">Faça login na sua conta</p>
         </div>

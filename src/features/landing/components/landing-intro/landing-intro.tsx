@@ -1,6 +1,7 @@
 'use client'
 import { Button } from '@heroui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function LandingIntro() {
   return (
@@ -15,7 +16,7 @@ export default function LandingIntro() {
             complicações.
           </p>
           <Button className="text-white bg-orange-400 hover:bg-orange-500 text-lg px-6 py-3 rounded-xl">
-            Começar agora
+            <Link href="/register">COMEÇAR AGORA</Link>
           </Button>
         </div>
         <div className="flex justify-center lg:justify-end">
@@ -24,7 +25,7 @@ export default function LandingIntro() {
             alt="Calendário 3D"
             width={420}
             height={420}
-            className="object-contain"
+            className="object-contain hidden lg:block"
           />
         </div>
       </div>
