@@ -3,19 +3,28 @@
 import { auth } from '@/lib/firebase'
 import { db } from '@/lib/firestore'
 import { onAuthStateChanged } from 'firebase/auth'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc, Timestamp } from 'firebase/firestore'
 import { createContext, useContext, useEffect, useState } from 'react'
 
-type UserData = {
+export type UserData = {
   uid: string
   email: string
   name: string
-  phone: string
+  phone?: string
+  cpf?: string
+  photo?: string
+  createdAt: Date
+  trialEndsAt: Date
 }
 
-const UserContext = createContext<{ user: UserData | null; loading: boolean }>({
+const UserContext = createContext<{
+  user: UserData | null
+  loading: boolean
+  setUser: React.Dispatch<React.SetStateAction<UserData | null>>
+}>({
   user: null,
   loading: true,
+  setUser: () => {},
 })
 
 export function UserProvider({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -30,11 +39,19 @@ export function UserProvider({ children }: Readonly<{ children: React.ReactNode 
 
         if (docSnap.exists()) {
           const data = docSnap.data()
+          const createdAt = (data.createdAt as Timestamp).toDate()
+          const trialEndsAt = new Date(createdAt)
+          trialEndsAt.setDate(trialEndsAt.getDate() + 15)
+
           setUser({
             uid: firebaseUser.uid,
             email: firebaseUser.email || '',
             name: data.name,
             phone: data.phone,
+            cpf: data.cpf,
+            photo: data.photo || '',
+            createdAt,
+            trialEndsAt,
           })
         }
       } else {
@@ -47,7 +64,7 @@ export function UserProvider({ children }: Readonly<{ children: React.ReactNode 
     return () => unsubscribe()
   }, [])
 
-  return <UserContext.Provider value={{ user, loading }}>{children}</UserContext.Provider>
+  return <UserContext.Provider value={{ user, loading, setUser }}>{children}</UserContext.Provider>
 }
 
 export function useUser() {

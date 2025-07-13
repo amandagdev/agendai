@@ -54,11 +54,12 @@ export default function Header() {
 
         {!loading && !user && (
           <NavbarItem>
-            <Link href="/login">
-              <Button className="bg-orange-400 hover:bg-orange-500 text-white font-bold">
-                ENTRAR
-              </Button>
-            </Link>
+            <Button
+              onClick={() => router.push('/login')}
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold"
+            >
+              ENTRAR
+            </Button>
           </NavbarItem>
         )}
 
