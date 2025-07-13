@@ -15,7 +15,12 @@ export function AuthGuard({ children }: Readonly<{ children: React.ReactNode }>)
     }
   }, [user, loading, router])
 
-  if (loading) return <Spinner />
-
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-white">
+        <Spinner />
+      </div>
+    )
+  }
   return <>{user ? children : null}</>
 }

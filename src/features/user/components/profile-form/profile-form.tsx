@@ -25,7 +25,12 @@ export function ProfileForm() {
       <CardBody className="space-y-6">
         <form onSubmit={handleSubmit} onChange={handleChange} className="space-y-6">
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Avatar className="w-20 h-20 text-large" src={preview || user?.photo || ''} />
+            <div>
+              <Avatar
+                className="w-40 h-40 rounded-full object-cover"
+                src={preview || user?.photo || ''}
+              />
+            </div>
 
             <div className="w-full flex flex-col sm:flex-row sm:justify-between items-center gap-2">
               {editing && (
