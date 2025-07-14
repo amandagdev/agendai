@@ -31,7 +31,9 @@ export default function SidebarLayout({ children }: Readonly<SidebarProps>) {
       <div className="flex h-screen overflow-hidden bg-neutral-50">
         <aside className="w-64 bg-white shadow-md border-r flex flex-col justify-between p-4">
           <div className="space-y-6 overflow-y-auto">
-            <div className="text-2xl font-bold text-orange-500">Agendai</div>
+            <div className="text-2xl font-bold text-orange-500">
+              <Link href="/">Agendai</Link>
+            </div>
             <nav className="flex flex-col gap-2">
               {links.map(({ href, label, icon: Icon }) => (
                 <Link

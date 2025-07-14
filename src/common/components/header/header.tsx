@@ -1,5 +1,6 @@
 'use client'
 
+import { useUser } from '@/context/UserContext'
 import {
   Navbar,
   NavbarBrand,
@@ -15,6 +16,7 @@ import { useRouter } from 'next/navigation'
 
 export default function Header() {
   const router = useRouter()
+  const { user } = useUser()
 
   return (
     <Navbar className="bg-neutral-100 min-h-20">
@@ -41,14 +43,25 @@ export default function Header() {
           </NavbarItem>
         </>
 
-        <NavbarItem>
-          <Button
-            onClick={() => router.push('/login')}
-            className="bg-orange-400 hover:bg-orange-500 text-white font-bold"
-          >
-            ENTRAR
-          </Button>
-        </NavbarItem>
+        {user ? (
+          <NavbarItem>
+            <Button
+              onClick={() => router.push('/dashboard')}
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold"
+            >
+              MINHA CONTA
+            </Button>
+          </NavbarItem>
+        ) : (
+          <NavbarItem>
+            <Button
+              onClick={() => router.push('/login')}
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold"
+            >
+              ENTRAR
+            </Button>
+          </NavbarItem>
+        )}
       </NavbarContent>
 
       <NavbarMenuToggle className="sm:hidden text-orange-400" />
