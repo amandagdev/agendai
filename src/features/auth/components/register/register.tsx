@@ -99,7 +99,11 @@ export default function Register() {
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
-          <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600">
+          <Button
+            type="submit"
+            className="w-full bg-orange-500 hover:bg-orange-600"
+            isLoading={loading}
+          >
             {loading ? 'Criando conta...' : 'Criar conta'}
           </Button>
 

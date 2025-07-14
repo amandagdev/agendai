@@ -19,7 +19,6 @@ export function useProfileForm() {
       setPreview(previewURL)
     }
   }
-
   const checkChanges = (form: HTMLFormElement) => {
     const formData = new FormData(form)
     const name = formData.get('name') as string
@@ -27,7 +26,9 @@ export function useProfileForm() {
     const cpf = formData.get('cpf') as string
     const file = formData.get('photoFile') as File
 
-    return name !== user?.name || phone !== user?.phone || cpf !== user?.cpf || (file && file.name)
+    const photoChanged = file && file.name !== '' && preview !== user?.photo
+
+    return name !== user?.name || phone !== user?.phone || cpf !== user?.cpf || photoChanged
   }
 
   const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
