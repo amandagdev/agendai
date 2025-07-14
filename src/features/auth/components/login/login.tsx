@@ -19,7 +19,7 @@ export default function Login() {
       const cleanPassword = password.trim()
 
       await loginWithEmail(cleanEmail, cleanPassword)
-      router.push('/profile')
+      router.push('/dashboard')
     } catch (err: unknown) {
       console.log(err)
       setError('Email ou senha inválidos.')
