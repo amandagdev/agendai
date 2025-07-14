@@ -13,13 +13,19 @@ import {
 import { Button } from '@heroui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function Header() {
   const router = useRouter()
   const { user } = useUser()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <Navbar className="bg-neutral-100 min-h-20">
+    <Navbar
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-neutral-100 min-h-20"
+    >
       <NavbarBrand>
         <Link href="/" className="text-2xl font-bold text-orange-400">
           Agendai
@@ -30,18 +36,16 @@ export default function Header() {
         className="hidden sm:flex gap-6 text-sm font-bold text-neutral-600"
         justify="end"
       >
-        <>
-          <NavbarItem>
-            <Link href="#como-funciona" className="font-normal hover:text-neutral-500 transition">
-              Como funciona
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="#preco" className="font-normal hover:text-neutral-500 transition">
-              Preço
-            </Link>
-          </NavbarItem>
-        </>
+        <NavbarItem>
+          <Link href="#como-funciona" className="font-normal hover:text-neutral-500 transition">
+            Como funciona
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link href="#preco" className="font-normal hover:text-neutral-500 transition">
+            Preço
+          </Link>
+        </NavbarItem>
 
         {user ? (
           <NavbarItem>
@@ -66,16 +70,31 @@ export default function Header() {
 
       <NavbarMenuToggle className="sm:hidden text-orange-400" />
 
-      <NavbarMenu>
+      <NavbarMenu className="bg-neutral-50 text-neutral-800">
         <NavbarMenuItem>
-          <Link href="/como-funciona">Como Funciona</Link>
+          <Link onClick={() => setIsMenuOpen(false)} href="#como-funciona">
+            Como Funciona
+          </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link href="/preco">Preço</Link>
+          <Link onClick={() => setIsMenuOpen(false)} href="#preco">
+            Preço
+          </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Link href="/login">Entrar</Link>
-        </NavbarMenuItem>
+
+        {user ? (
+          <NavbarMenuItem>
+            <Link onClick={() => setIsMenuOpen(false)} href="/dashboard">
+              Minha Conta
+            </Link>
+          </NavbarMenuItem>
+        ) : (
+          <NavbarMenuItem>
+            <Link onClick={() => setIsMenuOpen(false)} href="/login">
+              Entrar
+            </Link>
+          </NavbarMenuItem>
+        )}
       </NavbarMenu>
     </Navbar>
   )
