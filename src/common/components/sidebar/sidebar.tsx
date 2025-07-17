@@ -19,7 +19,7 @@ const links = [
   { href: '/profile', label: 'Perfil', icon: User },
 ]
 
-export default function SidebarLayout({ children }: SidebarProps) {
+export default function SidebarLayout({ children }: Readonly<SidebarProps>) {
   const pathname = usePathname()
   const router = useRouter()
 
