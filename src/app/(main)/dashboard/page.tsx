@@ -1,6 +1,6 @@
 'use client'
 
-import { AppointmentsTable } from '@/features/appointments/appointments-table/appointments-table'
+import { AppointmentsTable } from '@/features/appointments/components/appointments-table/appointments-table'
 
 export default function DashboardPage() {
   return (
