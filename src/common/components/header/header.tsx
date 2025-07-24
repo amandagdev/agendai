@@ -11,6 +11,7 @@ import {
   NavbarMenuToggle,
 } from '@heroui/navbar'
 import { Button } from '@heroui/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -24,16 +25,16 @@ export default function Header() {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-neutral-100 min-h-20"
+      className="bg-gray-100 min-h-20 pt-12"
     >
       <NavbarBrand>
-        <Link href="/" className="text-2xl font-bold text-orange-400">
-          Agendai
+        <Link href="/">
+          <Image src={'/images/logo.png'} alt="Agendai" width={200} height={200} />
         </Link>
       </NavbarBrand>
 
       <NavbarContent
-        className="hidden sm:flex gap-6 text-sm font-bold text-neutral-600"
+        className="hidden sm:flex gap- text-sm font-bold text-neutral-600"
         justify="end"
       >
         <NavbarItem>
@@ -57,14 +58,25 @@ export default function Header() {
             </Button>
           </NavbarItem>
         ) : (
-          <NavbarItem>
-            <Button
-              onClick={() => router.push('/login')}
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold"
-            >
-              ENTRAR
-            </Button>
-          </NavbarItem>
+          <>
+            <NavbarItem>
+              <Button
+                onClick={() => router.push('/login')}
+                className="border text-orange-400 border-orange-400 bg-white-bold"
+                variant="bordered"
+              >
+                Login
+              </Button>
+            </NavbarItem>
+            <NavbarItem>
+              <Button
+                onClick={() => router.push('/register')}
+                className="bg-orange-500 hover:bg-orange-500 text-white font-bold"
+              >
+                Cadastro
+              </Button>
+            </NavbarItem>
+          </>
         )}
       </NavbarContent>
 
