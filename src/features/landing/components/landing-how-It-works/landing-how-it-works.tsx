@@ -40,7 +40,7 @@ export default function LandingHowItWorks() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 mt-14">
+      <div className="grid md:grid-cols-3 gap-8 mt-8">
         {STEPS.map((step) => (
           <Card
             key={step.title}
