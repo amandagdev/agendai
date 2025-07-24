@@ -1,8 +1,9 @@
-# 🗓️ Agendai
+# 🗓️ AgendeJá
 
-O **Agendai** é um sistema simples e automatizado de agendamentos online. Ideal para pequenos negócios, profissionais independentes que desejam facilitar o processo de marcação com os seus clientes.
+O **AgendeJá** é um sistema simples e automatizado de agendamentos online. Ideal para pequenos negócios, profissionais independentes que desejam facilitar o processo de marcação com os seus clientes.
 
-<img width="2976" height="1306" alt="Captura de Tela 2025-07-12 às 02 49 19" src="https://github.com/user-attachments/assets/23524440-fa09-4b1e-8070-a012098b564e" />
+<img width="2970" height="1320" alt="Captura de Tela 2025-07-24 às 13 52 49" src="https://github.com/user-attachments/assets/8cbf9ca5-6276-401c-8dda-3b7aa132624b" />
+
 
 ## Acesso rápido
 
