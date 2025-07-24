@@ -18,7 +18,7 @@ export default function LandingIntro() {
   }
 
   return (
-    <section className="bg-gray-100 py-20">
+    <section className="bg-gray-100 py-20 pb-80">
       <div className="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-50">
         <div className="text-center lg:text-left max-w-xl">
           <div>

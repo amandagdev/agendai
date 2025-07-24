@@ -5,11 +5,11 @@ import LandingPricing from "@/features/landing/components/landing-pricing/landin
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-gray-100 items-center flex flex-col">
       <LandingIntro />
       <LandingHowItWorks />
       <LandingPricing />
       <LandingFaq />
-    </>
+    </div>
   )
 }
