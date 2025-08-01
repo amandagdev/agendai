@@ -12,7 +12,7 @@ const itemClasses = {
 
 export default function LandingFAQ() {
   return (
-    <section className="py-20 bg-orange-50 w-ful">
+    <section className="py-20 w-ful">
       <div className="container mx-auto px-6 lg:px-12 text-center">
         <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-8">Dúvidas</h2>
 

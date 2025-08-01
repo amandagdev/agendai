@@ -24,10 +24,10 @@ const STEPS = [
 export default function LandingHowItWorks() {
   return (
     <section
-      className="bg-white py-20 max-w-[83%] rounded-2xl p-6 lg:p-20 lg:pb-12 absolute top-170"
+      className="bg-white py-20 lg:max-w-[83%] lg:rounded-2xl p-6 lg:p-20 lg:pb-12 lg:absolute top-170"  
       id="como-funciona"
     >
-      <div className=" flex items-center">
+      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
         <div className="w-full text-start">
           <p className="text-orange-500 text-sm">AGENDAMENTOS</p>
           <h2 className="text-3xl lg:text-4xl text-gray-800 mt-4">Como funciona</h2>
@@ -35,7 +35,7 @@ export default function LandingHowItWorks() {
         </div>
 
         <p className="text-gray-600 text-md max-w-2xl mx-auto">
-          Simples, rápido e automatizado. Seus clientes agendam quando quiserem — e você só
+          Simples, rápido e automatizado. Seus clientes agendam quando quiserem e você só
           confirma.
         </p>
       </div>

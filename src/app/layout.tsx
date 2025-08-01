@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Agendai',
+  title: 'AgendeJá',
   description:
-    'Transforma a tua rotina com o Agendai. Automatiza agendamentos, envia lembretes e muito mais!',
+    'Transforma a tua rotina com o AgendeJá. Automatiza agendamentos, envia lembretes e muito mais!',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

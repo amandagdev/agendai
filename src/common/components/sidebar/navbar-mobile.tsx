@@ -33,7 +33,7 @@ export function MobileNavbar() {
     >
       <NavbarBrand>
         <Link href="/" className="text-lg font-bold text-orange-500">
-          Agendai
+          AgendeJá
         </Link>
       </NavbarBrand>
 
