@@ -32,7 +32,7 @@ export default function Login() {
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-gray-800">
             <Link href="/">
-              <span className="text-orange-500">agenda</span>í
+              <span className="text-orange-500">agende</span>já
             </Link>
           </h1>
           <p className="text-gray-600 mt-2 text-lg">Faça login na sua conta</p>

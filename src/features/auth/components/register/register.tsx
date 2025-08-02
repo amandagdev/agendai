@@ -8,7 +8,6 @@ import { useRegister } from '../../hooks/useRegister'
 
 export default function Register() {
   const [name, setName] = useState('')
-  const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -31,7 +30,7 @@ export default function Register() {
       return
     }
 
-    const result = await register(email, password, name, phone)
+    const result = await register(email, password, name)
 
     if (result.success) {
       router.push('/dashboard')
@@ -41,15 +40,15 @@ export default function Register() {
   }
 
   return (
-    <div className="w-full flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 px-4">
       <div className="w-full max-w-lg space-y-6">
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold text-gray-800">
+          <h1 className="text-4xl font-extrabold text-gray-800">
             <Link href="/">
-              <span className="text-orange-500">agenda</span>í
+              <span className="text-orange-500">agende</span>já
             </Link>
           </h1>
-          <p className="text-gray-600 mt-4 text-2xl">Crie a sua conta gratuita</p>
+          <p className="text-gray-600 mt-4 text-lg">Crie a sua conta gratuita</p>
           <p className="text-gray-700 mt-1 text-lg">
             Ganhe 14 dias para testar o Agendaí e transformar sua rotina de atendimentos.
           </p>
@@ -71,13 +70,6 @@ export default function Register() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-          />
-
-          <Input
-            id="phone"
-            label="Celular"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
           />
 
           <Input
