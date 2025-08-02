@@ -5,6 +5,7 @@ import { auth } from '@/lib/firebase'
 import { Button } from '@heroui/react'
 import { signOut } from 'firebase/auth'
 import { CalendarDays, LogOut, User } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { ReactNode } from 'react'
@@ -32,8 +33,8 @@ export default function SidebarLayout({ children }: Readonly<SidebarProps>) {
     <AuthGuard>
       <div className="flex bg-neutral-50">
         <aside className="hidden sm:flex sm:w-64 bg-white shadow-md border-r flex-col p-4">
-          <Link href="/" className="text-2xl font-bold text-orange-500">
-            AgendeJá
+          <Link href="/">
+            <Image src={'/images/logo.png'} alt="Agendai" width={200} height={200} />
           </Link>
           <nav className="flex flex-col gap-2 mt-6">
             {links.map(({ href, label, icon: Icon }) => (
@@ -55,7 +56,7 @@ export default function SidebarLayout({ children }: Readonly<SidebarProps>) {
             <Button
               onClick={handleLogout}
               startContent={<LogOut size={16} />}
-              className="text-white hover:bg-orange-300 bg-orange-400"
+              className="text-white hover:bg-orange-400 bg-orange-500"
               fullWidth
             >
               SAIR

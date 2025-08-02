@@ -7,7 +7,7 @@ O **AgendeJá** é um sistema simples e automatizado de agendamentos online. Ide
 
 ## Acesso rápido
 
-🔗 [https://agendai-app.vercel.app](https://agendai-app.vercel.app)
+🔗 [AgendeJá](https://agendeja-app.vercel.app/)
 
 
 ## Funcionalidades

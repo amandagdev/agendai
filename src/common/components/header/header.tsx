@@ -52,9 +52,9 @@ export default function Header() {
           <NavbarItem>
             <Button
               onClick={() => router.push('/dashboard')}
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold"
+              className="bg-orange-500 hover:bg-orange-400 text-white font-bold"
             >
-              MINHA CONTA
+              Minha conta
             </Button>
           </NavbarItem>
         ) : (
