@@ -19,10 +19,25 @@ O **AgendeJá** é um sistema simples e automatizado de agendamentos online. Ide
 -  14 dias gratuitos — sem necessidade de cartão
 
 
-## Instalação
+### Como rodar a aplicação
+
+Clone o repositório:
 
 ```bash
 git clone https://github.com/amandagdev/agendai.git
+
 cd agendai
+
+```
+
+Instale as dependências:
+
+```bash
 npm install
+```
+
+Rode a aplicação:
+
+```bash
 npm run dev
+```
