@@ -1,8 +1,8 @@
 # 🗓️ AgendeJá
 
-O **AgendeJá** é um sistema simples e automatizado de agendamentos online. Ideal para pequenos negócios, profissionais independentes que desejam facilitar o processo de marcação com os seus clientes.
+O **AgendeJá** é um sistema simples e automatizado de agendamentos online que **está sendo desenvolvido**. Ideal para pequenos negócios, profissionais independentes que desejam facilitar o processo de marcação com os seus clientes.
 
-<img width="2970" height="1320" alt="Captura de Tela 2025-07-24 às 13 52 49" src="https://github.com/user-attachments/assets/8cbf9ca5-6276-401c-8dda-3b7aa132624b" />
+<img width="3008" height="5314" alt="screencapture-agendeja-app-vercel-app-2025-08-11-01_52_28" src="https://github.com/user-attachments/assets/c8deeb82-da71-4acb-abe5-cf7fbc3fbb06" />
 
 
 ## Acesso rápido
@@ -12,7 +12,7 @@ O **AgendeJá** é um sistema simples e automatizado de agendamentos online. Ide
 
 ## Funcionalidades
 
--  Link personalizado para partilhar com clientes
+-  Link personalizado para compartilhar com clientes
 -  Página de agendamento com escolha de horários
 -  Lembretes automáticos por WhatsApp
 -  Dashboard simples e intuitivo
